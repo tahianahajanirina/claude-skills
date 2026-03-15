@@ -1,0 +1,77 @@
+# Registre central -- Skills & Connecteurs MCP
+# Environnements : code (Claude Code CLI/sandbox), cloud (Claude.ai Chat/Cowork)
+# Statuts : active, deprecated, planned
+
+skills:
+
+  # ── Claude Code (existants) ──────────────────────
+
+  - name: pdf-read
+    env: code
+    status: active
+    command: /pdf-read <path_or_url> [pages]
+    description: Lecture complete d'un PDF (texte, images, tableaux)
+    doc: skills/pdf-read/SKILL.md
+    native_overlap: Claude Code lit nativement les PDF via l'outil Read
+
+  - name: content-report
+    env: code
+    status: active
+    command: /content-report <path_or_url>
+    description: Rapport structure depuis n'importe quelle source
+    doc: skills/content-report/SKILL.md
+    native_overlap: Claude Code lit nativement la plupart des formats
+
+  - name: markdown
+    env: code
+    status: active
+    command: /markdown <action> [path]
+    description: Redaction Markdown technique (Google Style Guide)
+    doc: skills/markdown/SKILL.md
+    native_overlap: Claude genere du Markdown nativement
+
+  - name: diagram
+    env: code
+    status: active
+    command: /diagram <format> <type> [path]
+    description: Diagrammes Mermaid et draw.io
+    doc: skills/diagram/SKILL.md
+    native_overlap: Claude genere du Mermaid nativement
+
+  - name: dep-audit
+    env: code
+    status: active
+    command: /dep-audit
+    description: Audit dependances Python (imports vs requirements.txt)
+    doc: skills/dep-audit/SKILL.md
+    native_overlap: null
+
+  # ── Claude.ai Cloud (a completer) ───────────────
+  # Ajouter vos skills cloud ici. Exemple :
+  #
+  # - name: mon-skill-cloud
+  #   env: cloud
+  #   status: active
+  #   description: A remplir
+  #   doc: cloud/mon-skill-cloud.md
+  #   native_overlap: null
+
+mcp_connectors:
+
+  # ── Claude Code (a completer) ───────────────────
+  # Ajouter vos connecteurs MCP Code ici. Exemple :
+  #
+  # - name: filesystem
+  #   env: code
+  #   status: active
+  #   description: Acces lecture/ecriture au filesystem local
+  #   config_ref: .mcp.json
+
+  # ── Claude.ai Cloud (a completer) ──────────────
+  # Ajouter vos connecteurs MCP Cloud ici. Exemple :
+  #
+  # - name: google-drive
+  #   env: cloud
+  #   status: active
+  #   description: Lecture Google Docs/Sheets depuis Claude.ai
+  #   config_ref: null  # configure via UI claude.ai
